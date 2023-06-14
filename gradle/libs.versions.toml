@@ -1,0 +1,136 @@
+[versions]
+# App
+app-version-code = "1"
+app-version-name = "1.0.0"
+sdk-min = "24"
+sdk-target = "33"
+sdk-compile = "33"
+
+# Plugins
+android-gradle = "8.0.2"
+kotlin = "1.8.21"
+kotlin-coroutines = "1.6.4"
+ksp = "1.8.21-1.0.11"
+detekt = "1.22.0"
+
+# Libs
+android-core-ktx = "1.9.0"
+activity = "1.6.1"
+navigation = "2.5.3"
+lifecycle = "2.6.0"
+compose-bom = "2023.05.01"
+compose-compiler = "1.4.7"
+coil = "2.4.0"
+material3 = "1.1.0"
+koin = "3.4.1"
+koin-compose = "3.4.5"
+koin-test = "3.4.1"
+data-store = "1.0.0"
+retrofit = "2.9.0"
+moshi = "1.14.0"
+
+# test libraries
+test-junit = "4.13.2"
+test-mockk = "1.13.5"
+
+# android test libraries
+test-android-runner = "1.5.1"
+test-android-junit = "1.1.5"
+test-arch-core = "2.2.0"
+espresso-core = "3.5.1"
+
+[plugins]
+
+android-application = { id = "com.android.application", version.ref = "android-gradle" }
+android-library = { id = "com.android.library", version.ref = "android-gradle" }
+kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
+ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
+detekt = { id = "io.gitlab.arturbosch.detekt", version.ref = "detekt" }
+
+[libraries]
+
+androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "android-core-ktx" }
+activity-compose = { group = "androidx.activity", name = "activity-compose", version.ref = "activity" }
+lyfecycle-compose = { group = "androidx.lifecycle", name = "lifecycle-viewmodel-compose", version.ref = "lifecycle" }
+lyfecycle-runtime = { group = "androidx.lifecycle", name = "lifecycle-runtime-ktx", version.ref = "lifecycle" }
+lyfecycle-runtime-compose = { group = "androidx.lifecycle", name = "lifecycle-runtime-compose", version.ref = "lifecycle" }
+navigation = { group = "androidx.navigation", name = "navigation-compose", version.ref = "navigation" }
+coil = { group = "io.coil-kt", name = "coil-compose", version.ref = "coil" }
+coroutines-core = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "kotlin-coroutines" }
+coroutines-android = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-android", version.ref = "kotlin-coroutines" }
+data-store = { group = "androidx.datastore", name = "datastore-preferences", version.ref = "data-store" }
+retrofit-core = { module = "com.squareup.retrofit2:retrofit", version.ref = "retrofit" }
+
+# Moshi
+moshi-core = { module = "com.squareup.moshi:moshi", version.ref = "moshi" }
+moshi-codegen = { module = "com.squareup.moshi:moshi-kotlin-codegen", version.ref = "moshi" }
+converter-moshi = { module = "com.squareup.retrofit2:converter-moshi", version.ref = "retrofit" }
+
+# Koin
+koin-core = { module = "io.insert-koin:koin-core", version.ref = "koin" }
+koin-android = { module = "io.insert-koin:koin-android", version.ref = "koin" }
+koin-compose = { module = "io.insert-koin:koin-androidx-compose", version.ref = "koin-compose" }
+koin-android-test = { module = "io.insert-koin:koin-android-test", version.ref = "koin" }
+koin-junit4-test = { module = "io.insert-koin:koin-test-junit4", version.ref = "koin-test" }
+koin-test = { module = "io.insert-koin:koin-test", version.ref = "koin-test" }
+
+# Compose
+compose-bom = { group = "androidx.compose", name = "compose-bom", version.ref = "compose-bom" }
+compose-ui = { group = "androidx.compose.ui", name = "ui" }
+compose-ui-graphics = { group = "androidx.compose.ui", name = "ui-graphics" }
+compose-ui-preview = { group = "androidx.compose.ui", name = "ui-tooling-preview" }
+compose-ui-tooling = { group = "androidx.compose.ui", name = "ui-tooling" }
+compose-ui-manifest = { group = "androidx.compose.ui", name = "ui-test-manifest" }
+compose-material3 = { group = "androidx.compose.material3", name = "material3", version.ref = "material3" }
+compose-ui-util = { group = "androidx.compose.ui", name = "ui-util" }
+
+# test libraries
+test-junit = { module = "junit:junit", version.ref = "test-junit" }
+test-kotlin = { module = "org.jetbrains.kotlin:kotlin-test", version.ref = "kotlin" }
+test-kotlin-coroutines = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-test", version.ref = "kotlin-coroutines" }
+test-mockk = { module = "io.mockk:mockk", version.ref = "test-mockk" }
+
+# Android test libraries
+test-android-runner = { module = "androidx.test:runner", version.ref = "test-android-runner" }
+test-android-junit = { group = "androidx.test.ext", name = "junit", version.ref = "test-android-junit" }
+test-arch-core = { module = "androidx.arch.core:core-testing", version.ref = "test-arch-core" }
+espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espresso-core" }
+
+[bundles]
+compose = [
+    "compose-ui",
+    "compose-ui-graphics",
+    "compose-ui-preview",
+    "compose-material3",
+    "activity-compose",
+    "compose-ui-util",
+]
+
+moshi = [
+    "moshi-core",
+    "converter-moshi",
+]
+
+compose-debug = [
+    "compose-ui-tooling",
+    "compose-ui-manifest",
+]
+
+lyfecycle = [
+    "lyfecycle-compose",
+    "lyfecycle-runtime",
+    "lyfecycle-runtime-compose",
+]
+
+test-common = [
+    "test-junit",
+    "test-kotlin",
+    "test-kotlin-coroutines",
+    "test-mockk",
+]
+
+test-android = [
+    "test-arch-core",
+    "test-android-runner",
+    "test-android-junit",
+]
