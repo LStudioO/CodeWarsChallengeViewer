@@ -18,3 +18,5 @@ rootProject.name = "CodeWarsChallengeViewer"
 
 include(":app")
 include(":core:ui")
+include(":core:utils:kotlin")
+include(":core:utils:platform")
