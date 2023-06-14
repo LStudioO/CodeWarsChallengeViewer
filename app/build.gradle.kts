@@ -71,4 +71,6 @@ dependencies {
 
     androidTestImplementation(libs.bundles.test.android)
     androidTestImplementation(composeBom)
+
+    implementation(project(":core:ui"))
 }

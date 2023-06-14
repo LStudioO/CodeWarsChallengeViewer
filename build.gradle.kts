@@ -5,7 +5,9 @@ buildscript {
 
     dependencies {
         classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:1.8.21")
-        classpath("io.gitlab.arturbosch.detekt:detekt-gradle-plugin:${rootProject.extra["detektVersion"]}")
+        classpath(
+            "io.gitlab.arturbosch.detekt:detekt-gradle-plugin:${rootProject.extra["detektVersion"]}",
+        )
     }
 }
 
@@ -32,7 +34,9 @@ allprojects {
     }
 
     dependencies {
-        detekt("io.gitlab.arturbosch.detekt:detekt-formatting:${rootProject.extra["detektVersion"]}")
+        detekt(
+            "io.gitlab.arturbosch.detekt:detekt-formatting:${rootProject.extra["detektVersion"]}",
+        )
         detekt("io.gitlab.arturbosch.detekt:detekt-cli:${rootProject.extra["detektVersion"]}")
     }
 }

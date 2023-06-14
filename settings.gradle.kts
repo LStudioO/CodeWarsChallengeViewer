@@ -17,3 +17,4 @@ dependencyResolutionManagement {
 rootProject.name = "CodeWarsChallengeViewer"
 
 include(":app")
+include(":core:ui")

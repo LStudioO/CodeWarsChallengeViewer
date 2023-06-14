@@ -1,4 +1,4 @@
-package com.vstorchevyi.codewars.ui.theme
+package com.core.ui.theme
 
 import androidx.compose.ui.graphics.Color
 
