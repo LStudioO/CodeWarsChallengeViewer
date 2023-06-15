@@ -2,7 +2,7 @@
 # App
 app-version-code = "1"
 app-version-name = "1.0.0"
-sdk-min = "24"
+sdk-min = "26"
 sdk-target = "33"
 sdk-compile = "33"
 
@@ -28,6 +28,7 @@ koin-test = "3.4.1"
 data-store = "1.0.0"
 retrofit = "2.9.0"
 moshi = "1.14.0"
+kotlinx-datetime = "0.4.0"
 
 # test libraries
 test-junit = "4.13.2"
@@ -60,16 +61,18 @@ coroutines-core = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", ve
 coroutines-android = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-android", version.ref = "kotlin-coroutines" }
 data-store = { group = "androidx.datastore", name = "datastore-preferences", version.ref = "data-store" }
 retrofit-core = { module = "com.squareup.retrofit2:retrofit", version.ref = "retrofit" }
+retrofit-converter-moshi = { module = "com.squareup.retrofit2:converter-moshi", version.ref = "retrofit" }
+kotlinx-datetime = { module = "org.jetbrains.kotlinx:kotlinx-datetime", version.ref = "kotlinx-datetime" }
 
 # Moshi
 moshi-core = { module = "com.squareup.moshi:moshi", version.ref = "moshi" }
 moshi-codegen = { module = "com.squareup.moshi:moshi-kotlin-codegen", version.ref = "moshi" }
-converter-moshi = { module = "com.squareup.retrofit2:converter-moshi", version.ref = "retrofit" }
 
 # Koin
 koin-core = { module = "io.insert-koin:koin-core", version.ref = "koin" }
 koin-android = { module = "io.insert-koin:koin-android", version.ref = "koin" }
 koin-compose = { module = "io.insert-koin:koin-androidx-compose", version.ref = "koin-compose" }
+koin-compose-navigation = { module = "io.insert-koin:koin-androidx-compose-navigation", version.ref = "koin-compose" }
 koin-android-test = { module = "io.insert-koin:koin-android-test", version.ref = "koin" }
 koin-junit4-test = { module = "io.insert-koin:koin-test-junit4", version.ref = "koin-test" }
 koin-test = { module = "io.insert-koin:koin-test", version.ref = "koin-test" }
@@ -104,11 +107,16 @@ compose = [
     "compose-material3",
     "activity-compose",
     "compose-ui-util",
+    "lyfecycle-runtime-compose"
 ]
 
 moshi = [
     "moshi-core",
-    "converter-moshi",
+]
+
+retrofit = [
+    "retrofit-core",
+    "retrofit-converter-moshi",
 ]
 
 compose-debug = [

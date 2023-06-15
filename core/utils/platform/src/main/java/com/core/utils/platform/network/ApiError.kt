@@ -1,6 +1,6 @@
 package com.core.utils.platform.network
 
-sealed class ApiError
+sealed class ApiError : Exception()
 
 data class HttpError(val code: Int, val body: String) : ApiError()
 

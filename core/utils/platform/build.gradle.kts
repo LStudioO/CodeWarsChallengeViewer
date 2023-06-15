@@ -24,8 +24,9 @@ android {
 
 dependencies {
     implementation(libs.coroutines.core)
-    implementation(libs.retrofit.core)
-    implementation(project(mapOf("path" to ":core:utils:kotlin")))
+    implementation(libs.bundles.retrofit)
+    implementation(libs.moshi.core)
+    implementation(project(":core:utils:kotlin"))
 
     testImplementation(libs.bundles.test.common)
 
