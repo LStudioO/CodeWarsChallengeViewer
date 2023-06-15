@@ -60,6 +60,8 @@ dependencies {
 
     implementation(libs.androidx.core.ktx)
 
+    implementation(libs.timber)
+
     implementation(libs.koin.android)
     implementation(libs.koin.compose)
 
@@ -74,6 +76,7 @@ dependencies {
     androidTestImplementation(composeBom)
 
     implementation(project(":core:ui"))
+    implementation(project(":core:utils:kotlin"))
     implementation(project(":core:utils:platform"))
     implementation(project(":feature:user"))
 }

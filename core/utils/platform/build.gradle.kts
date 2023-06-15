@@ -26,6 +26,7 @@ dependencies {
     implementation(libs.coroutines.core)
     implementation(libs.bundles.retrofit)
     implementation(libs.moshi.core)
+    implementation(libs.timber)
     implementation(project(":core:utils:kotlin"))
 
     testImplementation(libs.bundles.test.common)

@@ -29,6 +29,7 @@ data-store = "1.0.0"
 retrofit = "2.9.0"
 moshi = "1.14.0"
 kotlinx-datetime = "0.4.0"
+timber = "5.0.1"
 
 # test libraries
 test-junit = "4.13.2"
@@ -63,6 +64,7 @@ data-store = { group = "androidx.datastore", name = "datastore-preferences", ver
 retrofit-core = { module = "com.squareup.retrofit2:retrofit", version.ref = "retrofit" }
 retrofit-converter-moshi = { module = "com.squareup.retrofit2:converter-moshi", version.ref = "retrofit" }
 kotlinx-datetime = { module = "org.jetbrains.kotlinx:kotlinx-datetime", version.ref = "kotlinx-datetime" }
+timber = { module = "com.jakewharton.timber:timber", version.ref = "timber" }
 
 # Moshi
 moshi-core = { module = "com.squareup.moshi:moshi", version.ref = "moshi" }
