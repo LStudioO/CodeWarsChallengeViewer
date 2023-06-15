@@ -36,6 +36,7 @@ dependencies {
     implementation(composeBom)
     implementation(libs.bundles.compose)
     implementation(libs.bundles.compose.debug)
+    implementation(libs.bundles.paging)
     implementation(libs.navigation)
     implementation(libs.koin.android)
     implementation(libs.koin.compose)
@@ -46,6 +47,7 @@ dependencies {
     ksp(libs.moshi.codegen)
 
     testImplementation(libs.bundles.test.common)
+    testImplementation(libs.paging.testing)
 
     androidTestImplementation(libs.bundles.test.android)
 

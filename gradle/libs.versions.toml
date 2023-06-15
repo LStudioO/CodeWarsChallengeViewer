@@ -30,6 +30,8 @@ retrofit = "2.9.0"
 moshi = "1.14.0"
 kotlinx-datetime = "0.4.0"
 timber = "5.0.1"
+paging = "3.2.0-beta01"
+turbine = "0.13.0"
 
 # test libraries
 test-junit = "4.13.2"
@@ -89,11 +91,17 @@ compose-ui-manifest = { group = "androidx.compose.ui", name = "ui-test-manifest"
 compose-material3 = { group = "androidx.compose.material3", name = "material3", version.ref = "material3" }
 compose-ui-util = { group = "androidx.compose.ui", name = "ui-util" }
 
+# Paging
+paging-runtime = { module = "androidx.paging:paging-runtime", version.ref = "paging" }
+paging-compose = { module = "androidx.paging:paging-compose", version.ref = "paging" }
+paging-testing = { module = "androidx.paging:paging-testing", version.ref = "paging" }
+
 # test libraries
 test-junit = { module = "junit:junit", version.ref = "test-junit" }
 test-kotlin = { module = "org.jetbrains.kotlin:kotlin-test", version.ref = "kotlin" }
 test-kotlin-coroutines = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-test", version.ref = "kotlin-coroutines" }
 test-mockk = { module = "io.mockk:mockk", version.ref = "test-mockk" }
+test-turbine = { module = "app.cash.turbine:turbine", version.ref = "turbine" }
 
 # Android test libraries
 test-android-runner = { module = "androidx.test:runner", version.ref = "test-android-runner" }
@@ -121,6 +129,11 @@ retrofit = [
     "retrofit-converter-moshi",
 ]
 
+paging = [
+    "paging-runtime",
+    "paging-compose",
+]
+
 compose-debug = [
     "compose-ui-tooling",
     "compose-ui-manifest",
@@ -137,6 +150,7 @@ test-common = [
     "test-kotlin",
     "test-kotlin-coroutines",
     "test-mockk",
+    "test-turbine",
 ]
 
 test-android = [

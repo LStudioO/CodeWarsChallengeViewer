@@ -1,14 +1,14 @@
 package com.feature.user.domain.impl
 
-import com.core.utils.AppError
-import com.core.utils.functional.Either
+import androidx.paging.PagingData
 import com.feature.user.domain.api.UserRepository
-import com.feature.user.domain.model.CompletedChallenges
+import com.feature.user.domain.model.CompletedChallenge
+import kotlinx.coroutines.flow.Flow
 
 internal class GetUserCompletedChallengesUseCase(
     private val repository: UserRepository,
 ) {
-    suspend operator fun invoke(): Either<AppError, CompletedChallenges> {
+    operator fun invoke(): Flow<PagingData<CompletedChallenge>> {
         return repository.getCompletedChallenges()
     }
 }
