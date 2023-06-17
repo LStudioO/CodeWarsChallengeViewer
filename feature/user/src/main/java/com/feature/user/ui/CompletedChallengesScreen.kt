@@ -1,24 +1,27 @@
 package com.feature.user.ui
 
 import androidx.compose.foundation.clickable
-import androidx.compose.foundation.layout.Arrangement
-import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
-import androidx.compose.material3.Card
-import androidx.compose.material3.CircularProgressIndicator
-import androidx.compose.material3.Text
+import androidx.compose.material3.*
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.saveable.rememberSaveable
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.paging.LoadState
 import androidx.paging.compose.LazyPagingItems
 import androidx.paging.compose.collectAsLazyPagingItems
+import com.core.ui.component.CwTopAppBar
+import com.core.ui.icons.CwIcons
 import com.core.ui.theme.CodeWarsChallengeViewerTheme
+import com.feature.user.R
 import com.feature.user.domain.model.CompletedChallenge
 import org.koin.androidx.compose.getViewModel
 
@@ -43,9 +46,29 @@ internal fun CompletedChallengesScreen(
     onChallengeClick: (String) -> Unit,
     challenges: LazyPagingItems<CompletedChallenge>,
 ) {
+    var showSettingsDialog by rememberSaveable {
+        mutableStateOf(false)
+    }
+
+    if (showSettingsDialog) {
+        StubSettingsDialog(
+            onDismiss = { showSettingsDialog = false },
+        )
+    }
+
     LazyColumn(
         modifier = modifier,
     ) {
+        item {
+            CwTopAppBar(
+                title = stringResource(id = R.string.completed_challenges_title),
+                actionIcon = CwIcons.Settings,
+                actionIconContentDescription = stringResource(
+                    id = R.string.completed_challenges_toolbar_settings_description,
+                ),
+                onActionClick = { showSettingsDialog = true },
+            )
+        }
         items(count = challenges.itemCount) { index ->
             val challenge = challenges[index]
             ChallengeElement(challenge = challenge) {
@@ -111,6 +134,35 @@ internal fun CompletedChallengesScreen(
 
             else -> {}
         }
+    }
+}
+
+@OptIn(ExperimentalMaterial3Api::class)
+@Composable
+private fun StubSettingsDialog(
+    onDismiss: () -> Unit,
+) {
+    AlertDialog(onDismissRequest = onDismiss) {
+        Card(
+            modifier = Modifier
+                .padding(16.dp)
+                .fillMaxWidth(),
+            colors = CardDefaults.cardColors(
+                containerColor = MaterialTheme.colorScheme.surface,
+            ),
+            content = {
+                Box(
+                    modifier = Modifier
+                        .heightIn(min = 100.dp)
+                        .fillMaxWidth(),
+                ) {
+                    Text(
+                        modifier = Modifier.align(alignment = Alignment.Center),
+                        text = "Stub settings",
+                    )
+                }
+            },
+        )
     }
 }
 

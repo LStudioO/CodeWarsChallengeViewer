@@ -35,6 +35,7 @@ dependencies {
 
     implementation(composeBom)
     implementation(libs.bundles.compose)
+    implementation(libs.bundles.compose.debug)
 
     testImplementation(libs.bundles.test.common)
 
