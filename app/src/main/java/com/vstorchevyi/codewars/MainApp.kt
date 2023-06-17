@@ -1,6 +1,9 @@
 package com.vstorchevyi.codewars
 
+import androidx.compose.foundation.layout.WindowInsets
+import androidx.compose.foundation.layout.navigationBarsPadding
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.safeDrawingPadding
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.SnackbarDuration
 import androidx.compose.material3.SnackbarHost
@@ -11,6 +14,7 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.navigation.compose.rememberNavController
 import com.core.utils.platform.network.NetworkMonitor
@@ -38,11 +42,18 @@ fun MainApp(
     }
 
     Scaffold(
-        snackbarHost = { SnackbarHost(snackbarHostState) },
+        contentWindowInsets = WindowInsets(0.dp),
+        snackbarHost = {
+            SnackbarHost(
+                modifier = Modifier.navigationBarsPadding(),
+                hostState = snackbarHostState,
+            )
+        },
         content = { innerPadding ->
-
             RootNavGraph(
-                modifier = Modifier.padding(innerPadding),
+                modifier = Modifier
+                    .safeDrawingPadding()
+                    .padding(innerPadding),
                 navController = navController,
                 startDestination = completedChallengesRoute,
             )

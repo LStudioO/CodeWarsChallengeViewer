@@ -56,6 +56,7 @@ dependencies {
 
     implementation(composeBom)
     implementation(libs.bundles.compose)
+    implementation(libs.accompanist.systemuicontroller)
     implementation(libs.navigation)
 
     implementation(libs.androidx.core.ktx)
