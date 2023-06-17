@@ -47,7 +47,7 @@ private val LightColorScheme = lightColorScheme(
 fun CodeWarsChallengeViewerTheme(
     darkTheme: Boolean = isSystemInDarkTheme(),
     // Dynamic color is available on Android 12+
-    dynamicColor: Boolean = true,
+    dynamicColor: Boolean = false,
     content: @Composable () -> Unit,
 ) {
     val colorScheme = when {
