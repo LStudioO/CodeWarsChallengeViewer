@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">CodeWarsChallengeViewer</string>
+    <string name="connectivity_not_connected">⚠️ You aren’t connected to the internet, please check the settings</string>
 </resources>
