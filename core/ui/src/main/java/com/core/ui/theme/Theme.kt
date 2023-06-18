@@ -71,7 +71,7 @@ private val DarkColors = darkColorScheme(
 )
 
 @Composable
-fun CodeWarsChallengeViewerTheme(
+fun CwTheme(
     darkTheme: Boolean = isSystemInDarkTheme(),
     // Dynamic color is available on Android 12+
     dynamicColor: Boolean = false,

@@ -8,7 +8,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.vector.ImageVector
 import com.core.ui.icons.CwIcons
 import com.core.ui.preview.ThemePreviews
-import com.core.ui.theme.CodeWarsChallengeViewerTheme
+import com.core.ui.theme.CwTheme
 
 @Composable
 fun CwTopAppBar(
@@ -22,10 +22,12 @@ fun CwTopAppBar(
     onActionClick: () -> Unit = {},
 ) {
     CenterAlignedTopAppBar(
-        title = { Text(text = title) },
-        colors = TopAppBarDefaults.centerAlignedTopAppBarColors(
-            containerColor = MaterialTheme.colorScheme.primary,
-        ),
+        title = {
+            Text(
+                text = title,
+                style = MaterialTheme.typography.headlineMedium,
+            )
+        },
         navigationIcon = {
             if (navigationIcon != null) {
                 IconButton(onClick = onNavigationClick) {
@@ -54,8 +56,8 @@ fun CwTopAppBar(
 
 @ThemePreviews
 @Composable
-fun CwTopAppBarPreview() {
-    CodeWarsChallengeViewerTheme {
+private fun CwTopAppBarPreview() {
+    CwTheme {
         CwTopAppBar(
             title = "Toolbar",
             navigationIcon = CwIcons.ArrowBack,

@@ -17,8 +17,9 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.navigation.compose.rememberNavController
+import com.core.ui.component.CwBackground
 import com.core.utils.platform.network.NetworkMonitor
-import com.feature.user.ui.completedChallengesRoute
+import com.feature.user.ui.challenge.completedChallengesRoute
 import com.vstorchevyi.codewars.navigation.RootNavGraph
 import org.koin.compose.koinInject
 
@@ -26,37 +27,39 @@ import org.koin.compose.koinInject
 fun MainApp(
     networkMonitor: NetworkMonitor = koinInject(),
 ) {
-    val navController = rememberNavController()
-    val snackbarHostState = remember { SnackbarHostState() }
+    CwBackground {
+        val navController = rememberNavController()
+        val snackbarHostState = remember { SnackbarHostState() }
 
-    val isOnline by networkMonitor.isAvailable.collectAsStateWithLifecycle(initialValue = true)
+        val isOnline by networkMonitor.isAvailable.collectAsStateWithLifecycle(initialValue = true)
 
-    val notConnectedMessage = stringResource(R.string.connectivity_not_connected)
-    LaunchedEffect(!isOnline) {
-        if (!isOnline) {
-            snackbarHostState.showSnackbar(
-                message = notConnectedMessage,
-                duration = SnackbarDuration.Indefinite,
-            )
+        val notConnectedMessage = stringResource(R.string.connectivity_not_connected)
+        LaunchedEffect(!isOnline) {
+            if (!isOnline) {
+                snackbarHostState.showSnackbar(
+                    message = notConnectedMessage,
+                    duration = SnackbarDuration.Indefinite,
+                )
+            }
         }
-    }
 
-    Scaffold(
-        contentWindowInsets = WindowInsets(0.dp),
-        snackbarHost = {
-            SnackbarHost(
-                modifier = Modifier.navigationBarsPadding(),
-                hostState = snackbarHostState,
-            )
-        },
-        content = { innerPadding ->
-            RootNavGraph(
-                modifier = Modifier
-                    .safeDrawingPadding()
-                    .padding(innerPadding),
-                navController = navController,
-                startDestination = completedChallengesRoute,
-            )
-        },
-    )
+        Scaffold(
+            contentWindowInsets = WindowInsets(0.dp),
+            snackbarHost = {
+                SnackbarHost(
+                    modifier = Modifier.navigationBarsPadding(),
+                    hostState = snackbarHostState,
+                )
+            },
+            content = { innerPadding ->
+                RootNavGraph(
+                    modifier = Modifier
+                        .safeDrawingPadding()
+                        .padding(innerPadding),
+                    navController = navController,
+                    startDestination = completedChallengesRoute,
+                )
+            },
+        )
+    }
 }
