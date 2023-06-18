@@ -1,9 +1,8 @@
 package com.feature.user.domain.usecase
 
 import androidx.paging.PagingData
-import com.feature.user.domain.api.UserRepository
-import com.feature.user.domain.impl.GetUserCompletedChallengesUseCase
-import com.feature.user.domain.repo.FakeUserRepository
+import com.feature.user.data.local.FakeUserRepository
+import com.feature.user.domain.repository.UserRepository
 import com.feature.user.util.createCompletedChallenge
 import kotlinx.coroutines.flow.flowOf
 import org.junit.Assert.assertEquals

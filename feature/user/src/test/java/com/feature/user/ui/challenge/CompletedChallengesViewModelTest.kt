@@ -4,9 +4,9 @@ import androidx.paging.Pager
 import androidx.paging.PagingConfig
 import androidx.paging.testing.asPagingSourceFactory
 import androidx.paging.testing.asSnapshot
-import com.feature.user.domain.api.UserRepository
-import com.feature.user.domain.impl.GetUserCompletedChallengesUseCase
-import com.feature.user.domain.repo.FakeUserRepository
+import com.feature.user.data.local.FakeUserRepository
+import com.feature.user.domain.repository.UserRepository
+import com.feature.user.domain.usecase.GetUserCompletedChallengesUseCase
 import com.feature.user.ui.challenge.mapper.CompletedChallengeMapper
 import com.feature.user.util.MainDispatcherRule
 import com.feature.user.util.createCompletedChallenge

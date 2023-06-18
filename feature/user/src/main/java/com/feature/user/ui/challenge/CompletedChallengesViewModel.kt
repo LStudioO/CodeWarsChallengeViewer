@@ -4,7 +4,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import androidx.paging.cachedIn
 import androidx.paging.map
-import com.feature.user.domain.impl.GetUserCompletedChallengesUseCase
+import com.feature.user.domain.usecase.GetUserCompletedChallengesUseCase
 import com.feature.user.ui.challenge.mapper.CompletedChallengeMapper
 import kotlinx.coroutines.flow.map
 

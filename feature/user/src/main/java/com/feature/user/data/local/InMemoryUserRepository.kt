@@ -1,16 +1,16 @@
-package com.feature.user.domain.impl
+package com.feature.user.data.local
 
 import androidx.paging.Pager
 import androidx.paging.PagingConfig
 import androidx.paging.PagingData
 import androidx.paging.map
 import com.core.utils.logger.AppLogger
-import com.feature.user.data.local.UserDataSource
+import com.feature.user.data.local.data_source.UserDataSource
 import com.feature.user.data.mapper.CompletedChallengeMapper
 import com.feature.user.data.remote.api.UserApi
 import com.feature.user.data.remote.source.CompletedChallengesPagingSource
-import com.feature.user.domain.api.UserRepository
 import com.feature.user.domain.model.CompletedChallenge
+import com.feature.user.domain.repository.UserRepository
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
 

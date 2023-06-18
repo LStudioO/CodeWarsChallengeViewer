@@ -1,8 +1,8 @@
-package com.feature.user.domain.repo
+package com.feature.user.data.local
 
 import androidx.paging.PagingData
-import com.feature.user.domain.api.UserRepository
 import com.feature.user.domain.model.CompletedChallenge
+import com.feature.user.domain.repository.UserRepository
 import kotlinx.coroutines.flow.Flow
 
 internal class FakeUserRepository(

@@ -2,13 +2,13 @@ package com.feature.user.di
 
 import com.core.utils.platform.network.createApiService
 import com.feature.user.api.UserFeatureDeps
-import com.feature.user.data.local.InMemoryUserDataSource
-import com.feature.user.data.local.UserDataSource
+import com.feature.user.data.local.InMemoryUserRepository
+import com.feature.user.data.local.data_source.InMemoryUserDataSource
+import com.feature.user.data.local.data_source.UserDataSource
 import com.feature.user.data.mapper.CompletedChallengeMapper
 import com.feature.user.data.remote.api.UserApi
-import com.feature.user.domain.api.UserRepository
-import com.feature.user.domain.impl.GetUserCompletedChallengesUseCase
-import com.feature.user.domain.impl.InMemoryUserRepository
+import com.feature.user.domain.repository.UserRepository
+import com.feature.user.domain.usecase.GetUserCompletedChallengesUseCase
 import com.feature.user.ui.challenge.CompletedChallengesViewModel
 import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.dsl.module

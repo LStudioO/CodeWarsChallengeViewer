@@ -1,4 +1,4 @@
-package com.feature.user.domain.api
+package com.feature.user.domain.repository
 
 import androidx.paging.PagingData
 import com.feature.user.domain.model.CompletedChallenge
