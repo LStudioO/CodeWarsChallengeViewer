@@ -7,8 +7,9 @@ import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.runtime.DisposableEffect
 import androidx.compose.ui.graphics.Color
 import androidx.core.view.WindowCompat
-import com.core.ui.theme.CodeWarsChallengeViewerTheme
+import com.core.ui.theme.CwTheme
 import com.google.accompanist.systemuicontroller.rememberSystemUiController
+import com.vstorchevyi.codewars.di.scope.KoinLocalScope
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -29,8 +30,10 @@ class MainActivity : ComponentActivity() {
                 onDispose {}
             }
 
-            CodeWarsChallengeViewerTheme {
-                MainApp()
+            KoinLocalScope {
+                CwTheme {
+                    MainApp()
+                }
             }
         }
     }

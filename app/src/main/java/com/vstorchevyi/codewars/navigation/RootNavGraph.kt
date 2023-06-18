@@ -7,12 +7,13 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.stringResource
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import com.core.ui.component.CwTopAppBar
 import com.core.ui.icons.CwIcons
-import com.feature.user.ui.completedChallengesScreen
+import com.feature.user.ui.challenge.completedChallengesScreen
 
 @Composable
 fun RootNavGraph(
@@ -41,6 +42,9 @@ fun RootNavGraph(
                 CwTopAppBar(
                     title = "Test details",
                     navigationIcon = CwIcons.ArrowBack,
+                    navigationIconContentDescription = stringResource(
+                        id = com.core.ui.R.string.back_button_description,
+                    ),
                     onNavigationClick = navigateBack,
                 )
                 Box(
