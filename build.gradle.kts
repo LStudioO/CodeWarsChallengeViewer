@@ -41,6 +41,16 @@ allprojects {
     }
 }
 
+allprojects {
+    configurations {
+        all {
+            resolutionStrategy {
+                force(rootProject.project.libs.okhttp)
+            }
+        }
+    }
+}
+
 tasks.register("clean", Delete::class) {
     delete(rootProject.buildDir)
 }

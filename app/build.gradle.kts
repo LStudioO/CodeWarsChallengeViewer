@@ -16,7 +16,7 @@ android {
         versionCode = libs.versions.app.version.code.get().toInt()
         versionName = libs.versions.app.version.name.get()
 
-        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunner = "com.vstorchevyi.codewars.runner.AppTestRunner"
 
         vectorDrawables {
             useSupportLibrary = true
@@ -60,7 +60,7 @@ dependencies {
     implementation(libs.navigation)
 
     implementation(libs.androidx.core.ktx)
-
+    implementation(libs.bundles.retrofit)
     implementation(libs.timber)
 
     implementation(libs.koin.android)
@@ -73,8 +73,11 @@ dependencies {
     testImplementation(libs.koin.test)
     testImplementation(libs.koin.android.test)
 
-    androidTestImplementation(libs.bundles.test.android)
     androidTestImplementation(composeBom)
+    androidTestImplementation(libs.test.compose.ui)
+    androidTestImplementation(libs.bundles.test.android)
+    androidTestImplementation(libs.mockwebserver)
+    androidTestImplementation(libs.okhttp)
 
     implementation(project(":core:ui"))
     implementation(project(":core:utils:kotlin"))
