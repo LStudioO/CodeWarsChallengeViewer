@@ -1,4 +1,4 @@
-package com.feature.user
+package com.feature.user.util
 
 import com.feature.user.data.remote.dto.CompletedChallengeDto
 import com.feature.user.domain.model.CompletedChallenge
@@ -8,14 +8,12 @@ import kotlinx.datetime.Instant
 internal fun createCompletedChallenge(
     id: String = "",
     name: String = "",
-    slug: String = "",
     completedLanguages: List<Language> = emptyList(),
     completedAt: Instant = Instant.fromEpochMilliseconds(0),
 ): CompletedChallenge {
     return CompletedChallenge(
         id = id,
         name = name,
-        slug = slug,
         completedLanguages = completedLanguages,
         completedAt = completedAt,
     )

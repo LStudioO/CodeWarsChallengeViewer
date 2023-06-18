@@ -9,7 +9,7 @@ import com.feature.user.data.remote.api.UserApi
 import com.feature.user.domain.api.UserRepository
 import com.feature.user.domain.impl.GetUserCompletedChallengesUseCase
 import com.feature.user.domain.impl.InMemoryUserRepository
-import com.feature.user.ui.CompletedChallengesViewModel
+import com.feature.user.ui.challenge.CompletedChallengesViewModel
 import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.dsl.module
 
@@ -39,6 +39,8 @@ fun userFeatureInternalModule() = module {
     viewModel {
         CompletedChallengesViewModel(
             getCompletedChallenges = get(),
+            mapper = get(),
         )
     }
+    factory { com.feature.user.ui.challenge.mapper.CompletedChallengeMapper() }
 }

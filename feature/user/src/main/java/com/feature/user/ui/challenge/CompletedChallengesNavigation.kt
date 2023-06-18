@@ -1,4 +1,4 @@
-package com.feature.user.ui
+package com.feature.user.ui.challenge
 
 import androidx.navigation.NavController
 import androidx.navigation.NavGraphBuilder

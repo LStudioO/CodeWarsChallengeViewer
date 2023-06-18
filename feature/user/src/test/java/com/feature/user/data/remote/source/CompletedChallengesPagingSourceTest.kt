@@ -7,12 +7,12 @@ import androidx.paging.PagingState
 import com.core.utils.functional.Either
 import com.core.utils.logger.AppLogger
 import com.core.utils.platform.network.NetworkError
-import com.feature.user.createCompletedChallengeDto
 import com.feature.user.data.remote.api.API_PAGE_COUNT
 import com.feature.user.data.remote.api.FakeUserApi
 import com.feature.user.data.remote.api.TEST_USER
 import com.feature.user.data.remote.api.UserApi
 import com.feature.user.data.remote.dto.CompletedChallengeDto
+import com.feature.user.util.createCompletedChallengeDto
 import io.mockk.coEvery
 import io.mockk.every
 import io.mockk.mockk

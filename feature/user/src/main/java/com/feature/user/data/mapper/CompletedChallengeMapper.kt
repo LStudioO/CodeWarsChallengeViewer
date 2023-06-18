@@ -10,7 +10,6 @@ internal class CompletedChallengeMapper {
         return CompletedChallenge(
             id = from.id.orEmpty(),
             name = from.name.orEmpty(),
-            slug = from.slug.orEmpty(),
             completedLanguages = from.completedLanguages.map { langName ->
                 Language(langName)
             },

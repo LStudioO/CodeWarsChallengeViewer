@@ -1,14 +1,15 @@
-package com.feature.user.domain.impl
+package com.feature.user.domain.usecase
 
 import androidx.paging.testing.asSnapshot
-import com.feature.user.createCompletedChallenge
-import com.feature.user.createCompletedChallengeDto
 import com.feature.user.data.local.UserDataSource
 import com.feature.user.data.mapper.CompletedChallengeMapper
 import com.feature.user.data.remote.api.FakeUserApi
 import com.feature.user.data.remote.api.TEST_USER
 import com.feature.user.data.remote.api.UserApi
+import com.feature.user.domain.impl.InMemoryUserRepository
 import com.feature.user.domain.model.User
+import com.feature.user.util.createCompletedChallenge
+import com.feature.user.util.createCompletedChallengeDto
 import io.mockk.every
 import io.mockk.mockk
 import kotlinx.coroutines.test.runTest
