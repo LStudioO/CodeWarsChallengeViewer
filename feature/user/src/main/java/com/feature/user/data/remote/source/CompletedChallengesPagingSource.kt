@@ -12,7 +12,6 @@ internal class CompletedChallengesPagingSource(
     private val logger: AppLogger,
 ) : PagingSource<Int, CompletedChallengeDto>() {
 
-    var counter = 0
     override fun getRefreshKey(state: PagingState<Int, CompletedChallengeDto>): Int? {
         val anchor = state.anchorPosition ?: return null
         val page = state.closestPageToPosition(anchor) ?: return null
