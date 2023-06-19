@@ -16,7 +16,7 @@
 
 @file:OptIn(ExperimentalCoroutinesApi::class)
 
-package com.feature.user.util
+package com.core.utils.testing
 
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.ExperimentalCoroutinesApi

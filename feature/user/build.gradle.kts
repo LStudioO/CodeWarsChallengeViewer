@@ -12,6 +12,7 @@ android {
     defaultConfig {
         minSdk = libs.versions.sdk.min.get().toInt()
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles("consumer-rules.pro")
     }
 
     compileOptions {
@@ -53,6 +54,7 @@ dependencies {
     testImplementation(libs.bundles.test.common)
     testImplementation(libs.paging.testing)
     testImplementation(libs.test.arch.core)
+    testImplementation(project(":core:utils:testing"))
 
     androidTestImplementation(composeBom)
     androidTestImplementation(libs.test.compose.ui)
