@@ -43,7 +43,7 @@ import org.koin.androidx.compose.getViewModel
 @Composable
 internal fun CompletedChallengesRoute(
     modifier: Modifier = Modifier,
-    onChallengeClick: (String) -> Unit,
+    onChallengeClick: (String, String) -> Unit,
     viewModel: CompletedChallengesViewModel = getViewModel(),
 ) {
     val state = viewModel.challenges.collectAsLazyPagingItems()
@@ -65,7 +65,7 @@ private enum class ListContentType {
 @Composable
 internal fun CompletedChallengesScreen(
     modifier: Modifier = Modifier,
-    onChallengeClick: (String) -> Unit,
+    onChallengeClick: (String, String) -> Unit,
     lazyPagingItems: LazyPagingItems<CompletedChallengeUiModel>,
 ) {
     var showSettingsDialog by rememberSaveable {
@@ -191,7 +191,7 @@ private fun LazyListScope.pageRetryButton(
 private fun LazyListScope.completedChallenges(
     modifier: Modifier = Modifier,
     lazyPagingItems: LazyPagingItems<CompletedChallengeUiModel>,
-    onChallengeClick: (String) -> Unit,
+    onChallengeClick: (String, String) -> Unit,
 ) {
     if (lazyPagingItems.loadState.refresh !is LoadState.Error) {
         items(
@@ -221,7 +221,7 @@ private fun LazyListScope.completedChallenges(
                     completedAt = challenge.completedAt,
                     isLoading = false,
                     onClick = {
-                        onChallengeClick.invoke(challenge.id)
+                        onChallengeClick.invoke(challenge.id, challenge.name)
                     },
                 )
             } else if (lazyPagingItems.loadState.append !is LoadState.Error) {
@@ -346,7 +346,7 @@ private fun CompletedChallengesSuccessPreview() {
     CwTheme {
         CwBackground {
             CompletedChallengesScreen(
-                onChallengeClick = {},
+                onChallengeClick = { _, _ -> },
                 lazyPagingItems = lazyPagingItems,
             )
         }
@@ -369,7 +369,7 @@ private fun CompletedChallengesErrorPreview() {
     CwTheme {
         CwBackground {
             CompletedChallengesScreen(
-                onChallengeClick = {},
+                onChallengeClick = { _, _ -> },
                 lazyPagingItems = lazyPagingItems,
             )
         }
@@ -393,7 +393,7 @@ private fun CompletedChallengesErrorPagePreview() {
     CwTheme {
         CwBackground {
             CompletedChallengesScreen(
-                onChallengeClick = {},
+                onChallengeClick = { _, _ -> },
                 lazyPagingItems = lazyPagingItems,
             )
         }

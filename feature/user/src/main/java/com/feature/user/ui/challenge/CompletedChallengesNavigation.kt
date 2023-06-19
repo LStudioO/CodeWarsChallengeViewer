@@ -13,7 +13,7 @@ fun NavController.navigateToCompletedChallenges(navOptions: NavOptions? = null) 
 }
 
 fun NavGraphBuilder.completedChallengesScreen(
-    onChallengeClick: (String) -> Unit,
+    onChallengeClick: (String, String) -> Unit,
 ) {
     composable(route = completedChallengesRoute) {
         CompletedChallengesRoute(
