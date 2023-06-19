@@ -19,3 +19,9 @@
 # If you keep the line number information, uncomment this to
 # hide the original source file name.
 #-renamesourcefileattribute SourceFile
+# Keep generic signature of Call, Response (R8 full mode strips signatures from non-kept items).
+-keep,allowobfuscation,allowshrinking class com.core.utils.platform.network.EitherCallAdapter
+-keep,allowobfuscation,allowshrinking class com.core.utils.platform.network.EitherCall
+-keep,allowobfuscation,allowshrinking class com.core.utils.platform.network.EitherCallAdapterFactory
+
+-keep,allowobfuscation,allowshrinking class com.core.utils.functional.Either
