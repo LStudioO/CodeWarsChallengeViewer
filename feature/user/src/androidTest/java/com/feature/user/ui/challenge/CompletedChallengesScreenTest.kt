@@ -33,7 +33,7 @@ class CompletedChallengesScreenTest {
         composeTestRule.setContent {
             val lazyPagingItems = fakeDataFlow.collectAsLazyPagingItems()
             CompletedChallengesScreen(
-                onChallengeClick = {},
+                onChallengeClick = { _, _ -> },
                 lazyPagingItems = lazyPagingItems,
             )
         }
@@ -60,7 +60,7 @@ class CompletedChallengesScreenTest {
         composeTestRule.setContent {
             val lazyPagingItems = fakeDataFlow.collectAsLazyPagingItems()
             CompletedChallengesScreen(
-                onChallengeClick = {},
+                onChallengeClick = { _, _ -> },
                 lazyPagingItems = lazyPagingItems,
             )
         }
@@ -90,7 +90,7 @@ class CompletedChallengesScreenTest {
         composeTestRule.setContent {
             val lazyPagingItems = fakeDataFlow.collectAsLazyPagingItems()
             CompletedChallengesScreen(
-                onChallengeClick = {},
+                onChallengeClick = { _, _ -> },
                 lazyPagingItems = lazyPagingItems,
             )
         }
@@ -121,7 +121,7 @@ class CompletedChallengesScreenTest {
         composeTestRule.setContent {
             val lazyPagingItems = fakeDataFlow.collectAsLazyPagingItems()
             CompletedChallengesScreen(
-                onChallengeClick = {},
+                onChallengeClick = { _, _ -> },
                 lazyPagingItems = lazyPagingItems,
             )
         }
@@ -156,7 +156,7 @@ class CompletedChallengesScreenTest {
         composeTestRule.setContent {
             val lazyPagingItems = fakeDataFlow.collectAsLazyPagingItems()
             CompletedChallengesScreen(
-                onChallengeClick = {},
+                onChallengeClick = { _, _ -> },
                 lazyPagingItems = lazyPagingItems,
             )
         }
@@ -195,7 +195,7 @@ class CompletedChallengesScreenTest {
         composeTestRule.setContent {
             val lazyPagingItems = fakeDataFlow.collectAsLazyPagingItems()
             CompletedChallengesScreen(
-                onChallengeClick = {},
+                onChallengeClick = { _, _ -> },
                 lazyPagingItems = lazyPagingItems,
             )
         }
@@ -226,7 +226,7 @@ class CompletedChallengesScreenTest {
         composeTestRule.setContent {
             val lazyPagingItems = fakeDataFlow.collectAsLazyPagingItems()
             CompletedChallengesScreen(
-                onChallengeClick = {},
+                onChallengeClick = { _, _ -> },
                 lazyPagingItems = lazyPagingItems,
             )
         }
@@ -258,7 +258,7 @@ class CompletedChallengesScreenTest {
         composeTestRule.setContent {
             val lazyPagingItems = fakeDataFlow.collectAsLazyPagingItems()
             CompletedChallengesScreen(
-                onChallengeClick = {},
+                onChallengeClick = { _, _ -> },
                 lazyPagingItems = lazyPagingItems,
             )
         }

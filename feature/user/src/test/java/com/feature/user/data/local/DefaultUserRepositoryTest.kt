@@ -1,7 +1,6 @@
-package com.feature.user.domain.usecase
+package com.feature.user.data.local
 
 import androidx.paging.testing.asSnapshot
-import com.feature.user.data.local.InMemoryUserRepository
 import com.feature.user.data.local.data_source.UserDataSource
 import com.feature.user.data.mapper.CompletedChallengeMapper
 import com.feature.user.data.remote.api.FakeUserApi
@@ -16,7 +15,7 @@ import kotlinx.coroutines.test.runTest
 import org.junit.Assert.assertEquals
 import org.junit.Test
 
-internal class InMemoryUserRepositoryTest {
+internal class DefaultUserRepositoryTest {
     @Test
     fun `returns challenges from the api`() = runTest {
         // Arrange
@@ -59,8 +58,8 @@ internal class InMemoryUserRepositoryTest {
     private fun createSut(
         userApi: UserApi = mockk(),
         userDataSource: UserDataSource = mockk(),
-    ): InMemoryUserRepository {
-        return InMemoryUserRepository(
+    ): DefaultUserRepository {
+        return DefaultUserRepository(
             userApi = userApi,
             completedChallengeMapper = CompletedChallengeMapper(),
             userDataSource = userDataSource,

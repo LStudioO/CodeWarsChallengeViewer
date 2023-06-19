@@ -16,7 +16,7 @@ import kotlinx.coroutines.flow.map
 
 private const val CODEWARS_PAGE_SIZE = 200
 
-internal class InMemoryUserRepository(
+internal class DefaultUserRepository(
     private val userApi: UserApi,
     private val completedChallengeMapper: CompletedChallengeMapper,
     private val userDataSource: UserDataSource,

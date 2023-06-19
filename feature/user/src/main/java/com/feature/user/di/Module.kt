@@ -2,7 +2,7 @@ package com.feature.user.di
 
 import com.core.utils.platform.network.createApiService
 import com.feature.user.api.UserFeatureDeps
-import com.feature.user.data.local.InMemoryUserRepository
+import com.feature.user.data.local.DefaultUserRepository
 import com.feature.user.data.local.data_source.InMemoryUserDataSource
 import com.feature.user.data.local.data_source.UserDataSource
 import com.feature.user.data.mapper.CompletedChallengeMapper
@@ -24,7 +24,7 @@ fun userFeatureInternalModule() = module {
     factory { CompletedChallengeMapper() }
     factory<UserRepository> {
         val deps = get<UserFeatureDeps>()
-        InMemoryUserRepository(
+        DefaultUserRepository(
             userApi = get(),
             completedChallengeMapper = get(),
             userDataSource = get(),
