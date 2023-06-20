@@ -24,7 +24,6 @@ import androidx.paging.PagingData
 import androidx.paging.compose.LazyPagingItems
 import androidx.paging.compose.collectAsLazyPagingItems
 import com.core.ui.component.CwBackground
-import com.core.ui.component.CwProgressBar
 import com.core.ui.component.CwTopAppBar
 import com.core.ui.icons.CwIcons
 import com.core.ui.preview.ThemePreviews
@@ -91,7 +90,7 @@ internal fun CompletedChallengesScreen(
         SwipeRefresh(
             modifier = Modifier.testTag("swipeToRefresh"),
             state = rememberSwipeRefreshState(
-                lazyPagingItems.loadState.refresh is LoadState.Loading && lazyPagingItems.itemCount != 0,
+                lazyPagingItems.loadState.refresh is LoadState.Loading,
             ),
             onRefresh = { lazyPagingItems.refresh() },
             indicator = { indicatorState, trigger ->
@@ -117,6 +116,14 @@ internal fun CompletedChallengesScreen(
                     },
                 )
 
+                firstTimeChallengePlaceholders(
+                    modifier = Modifier.padding(
+                        horizontal = EdgePadding,
+                        vertical = 8.dp,
+                    ),
+                    lazyPagingItems = lazyPagingItems,
+                )
+
                 completedChallenges(
                     modifier = Modifier.padding(
                         horizontal = EdgePadding,
@@ -138,10 +145,6 @@ internal fun CompletedChallengesScreen(
         }
 
         TryAgainSection(
-            lazyPagingItems = lazyPagingItems,
-        )
-
-        FirstTimeLoader(
             lazyPagingItems = lazyPagingItems,
         )
     }
@@ -226,6 +229,7 @@ private fun LazyListScope.completedChallenges(
                 )
             } else if (lazyPagingItems.loadState.append !is LoadState.Error) {
                 CompletedChallengeCard(
+                    modifier = modifier,
                     orderNumber = index + 1,
                     name = "Test name",
                     languages = persistentListOf("javascript"),
@@ -238,17 +242,29 @@ private fun LazyListScope.completedChallenges(
     }
 }
 
-@Composable
-private fun FirstTimeLoader(lazyPagingItems: LazyPagingItems<CompletedChallengeUiModel>) {
+private fun LazyListScope.firstTimeChallengePlaceholders(
+    modifier: Modifier = Modifier,
+    lazyPagingItems: LazyPagingItems<CompletedChallengeUiModel>,
+) {
     if (lazyPagingItems.loadState.refresh is LoadState.Loading && lazyPagingItems.itemCount == 0) {
-        Column(
-            modifier = Modifier
-                .testTag("pageLoader")
-                .fillMaxSize(),
-            horizontalAlignment = Alignment.CenterHorizontally,
-            verticalArrangement = Arrangement.Center,
-        ) {
-            CwProgressBar()
+        items(
+            contentType = {
+                ListContentType.Placeholder
+            },
+            key = { index ->
+                "placeholder_$index"
+            },
+            count = 10,
+        ) { index ->
+            CompletedChallengeCard(
+                modifier = modifier.testTag("placeholder"),
+                orderNumber = index + 1,
+                name = "Test name",
+                languages = persistentListOf("javascript"),
+                completedAt = "2022-02-02",
+                isLoading = true,
+                onClick = { },
+            )
         }
     }
 }

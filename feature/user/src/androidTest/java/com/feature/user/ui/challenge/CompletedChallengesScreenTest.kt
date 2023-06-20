@@ -105,7 +105,7 @@ class CompletedChallengesScreenTest {
     }
 
     @Test
-    fun screenLoader_whenStartLoading_isDisplayed() {
+    fun placeholder_whenStartLoading_isDisplayed() {
         // Arrange
         val pagingData = PagingData.from(
             data = emptyList<CompletedChallengeUiModel>(),
@@ -128,10 +128,9 @@ class CompletedChallengesScreenTest {
 
         // Assert
         composeTestRule
-            .onNodeWithTag(
-                "pageLoader",
-            )
-            .assertIsDisplayed()
+            .onAllNodesWithTag("placeholder")
+            .onFirst()
+            .assertExists()
     }
 
     @Test
