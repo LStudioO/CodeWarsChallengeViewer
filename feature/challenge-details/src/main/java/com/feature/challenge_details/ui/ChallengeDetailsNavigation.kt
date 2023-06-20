@@ -45,6 +45,9 @@ fun NavGraphBuilder.challengeDetailsScreen(
     }
 }
 
+// A simplified version of a name fixer for the route
 private fun String.makeSafeForNavigation(): String {
-    return this.replace("/", "").replace("\\", "")
+    return this.replace("/", "")
+        .replace("\\", "")
+        .ifEmpty { "No name" }
 }
