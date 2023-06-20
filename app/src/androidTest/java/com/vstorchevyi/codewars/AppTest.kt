@@ -1,5 +1,3 @@
-@file:OptIn(ExperimentalTestApi::class)
-
 package com.vstorchevyi.codewars
 
 import android.content.Intent
@@ -31,6 +29,7 @@ import kotlin.properties.ReadOnlyProperty
 
 private const val PORT = 8080
 
+@OptIn(ExperimentalTestApi::class)
 class AppTest {
     private val instrumentedTestModule = module {
         factory<UserDataSource> {
@@ -81,9 +80,6 @@ class AppTest {
     private val completedChallenges by composeTestRule.stringResource(
         com.feature.user.R.string.completed_challenges_title,
     )
-    private val settings by composeTestRule.stringResource(
-        com.feature.user.R.string.completed_challenges_toolbar_settings_description,
-    )
     private val completedChallengeCard by composeTestRule.stringResource(
         com.feature.user.R.string.completed_challenges_card_description,
     )
@@ -108,13 +104,6 @@ class AppTest {
         composeTestRule.apply {
             onNodeWithText(completedChallenges)
                 .assertExists()
-        }
-    }
-
-    @Test
-    fun rootScreen_showSettingsIcon() {
-        composeTestRule.apply {
-            onNodeWithContentDescription(settings).assertExists()
         }
     }
 
@@ -157,15 +146,6 @@ class AppTest {
             // Check if the completed challenges screen is shown
             onNodeWithText(completedChallenges)
                 .assertExists()
-        }
-    }
-
-    @Test
-    fun details_noSettingIconIsShown() {
-        composeTestRule.apply {
-            navigateToDetails()
-
-            onNodeWithContentDescription(settings).assertDoesNotExist()
         }
     }
 
