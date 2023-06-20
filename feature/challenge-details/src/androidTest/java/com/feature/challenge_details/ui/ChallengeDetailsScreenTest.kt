@@ -336,8 +336,10 @@ internal class ChallengeDetailsScreenTest {
 
         // Assert
         composeTestRule
-            .onNodeWithTag(
-                "pageLoader",
+            .onNodeWithContentDescription(
+                composeTestRule.activity.getString(
+                    R.string.challenge_details_loader_content_description,
+                ),
             )
             .assertIsDisplayed()
     }

@@ -3,6 +3,7 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.ksp)
+    alias(libs.plugins.androidx.baselineprofile)
 }
 
 android {
@@ -69,6 +70,8 @@ dependencies {
     implementation(libs.bundles.moshi)
     ksp(libs.moshi.codegen)
 
+    implementation(libs.profileinstaller)
+
     testImplementation(libs.bundles.test.common)
     testImplementation(libs.koin.test)
     testImplementation(libs.koin.android.test)
@@ -85,4 +88,6 @@ dependencies {
 
     implementation(project(":feature:user"))
     implementation(project(":feature:challenge-details"))
+
+    baselineProfile(project(":benchmark"))
 }

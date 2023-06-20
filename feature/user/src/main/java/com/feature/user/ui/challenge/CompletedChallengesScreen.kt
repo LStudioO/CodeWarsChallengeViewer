@@ -93,7 +93,7 @@ internal fun CompletedChallengesScreen(
             indicatorPadding = PaddingValues(vertical = 40.dp),
         ) {
             LazyColumn(
-                modifier = modifier.testTag("lazyContainer"),
+                modifier = modifier.testTag("challengesContainer"),
                 state = listState,
                 contentPadding = PaddingValues(bottom = 8.dp),
             ) {

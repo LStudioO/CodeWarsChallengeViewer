@@ -198,10 +198,15 @@ internal fun ChallengeDetailsScreen(
                 modifier = Modifier
                     .fillMaxSize(),
             ) {
+                val description = stringResource(
+                    id = R.string.challenge_details_loader_content_description,
+                )
                 CwProgressBar(
                     modifier = Modifier
                         .align(Alignment.Center)
-                        .testTag("pageLoader"),
+                        .semantics {
+                            contentDescription = description
+                        },
                 )
             }
         }

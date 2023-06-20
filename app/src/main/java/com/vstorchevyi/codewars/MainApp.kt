@@ -1,3 +1,5 @@
+@file:OptIn(ExperimentalComposeUiApi::class)
+
 package com.vstorchevyi.codewars
 
 import androidx.compose.foundation.layout.WindowInsets
@@ -12,8 +14,11 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.remember
+import androidx.compose.ui.ExperimentalComposeUiApi
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.semantics.semantics
+import androidx.compose.ui.semantics.testTagsAsResourceId
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.navigation.compose.rememberNavController
@@ -44,6 +49,9 @@ fun MainApp(
         }
 
         Scaffold(
+            modifier = Modifier.semantics {
+                testTagsAsResourceId = true
+            },
             contentWindowInsets = WindowInsets(0.dp),
             snackbarHost = {
                 SnackbarHost(
