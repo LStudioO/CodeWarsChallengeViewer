@@ -9,7 +9,6 @@ import androidx.compose.foundation.lazy.LazyListScope
 import androidx.compose.foundation.lazy.rememberLazyListState
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
-import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.testTag
@@ -25,7 +24,6 @@ import androidx.paging.compose.LazyPagingItems
 import androidx.paging.compose.collectAsLazyPagingItems
 import com.core.ui.component.CwBackground
 import com.core.ui.component.CwTopAppBar
-import com.core.ui.icons.CwIcons
 import com.core.ui.preview.ThemePreviews
 import com.core.ui.theme.CwTheme
 import com.core.ui.values.EdgePadding
@@ -67,16 +65,6 @@ internal fun CompletedChallengesScreen(
     onChallengeClick: (String, String) -> Unit,
     lazyPagingItems: LazyPagingItems<CompletedChallengeUiModel>,
 ) {
-    var showSettingsDialog by rememberSaveable {
-        mutableStateOf(false)
-    }
-
-    if (showSettingsDialog) {
-        StubSettingsDialog(
-            onDismiss = { showSettingsDialog = false },
-        )
-    }
-
     val listState = rememberLazyListState()
 
     Box(
@@ -110,11 +98,7 @@ internal fun CompletedChallengesScreen(
                 contentPadding = PaddingValues(bottom = 8.dp),
             ) {
 
-                toolbar(
-                    onActionClick = {
-                        showSettingsDialog = true
-                    },
-                )
+                toolbar()
 
                 firstTimeChallengePlaceholders(
                     modifier = Modifier.padding(
@@ -152,7 +136,6 @@ internal fun CompletedChallengesScreen(
 
 private fun LazyListScope.toolbar(
     modifier: Modifier = Modifier,
-    onActionClick: () -> Unit,
 ) {
     stickyHeader(
         contentType = ListContentType.Header,
@@ -165,11 +148,6 @@ private fun LazyListScope.toolbar(
                 contentDescription = description
             },
             title = stringResource(id = R.string.completed_challenges_title),
-            actionIcon = CwIcons.Settings,
-            actionIconContentDescription = stringResource(
-                id = R.string.completed_challenges_toolbar_settings_description,
-            ),
-            onActionClick = onActionClick,
         )
     }
 }
@@ -295,35 +273,6 @@ private fun TryAgainSection(
                 )
             }
         }
-    }
-}
-
-@OptIn(ExperimentalMaterial3Api::class)
-@Composable
-private fun StubSettingsDialog(
-    onDismiss: () -> Unit,
-) {
-    AlertDialog(onDismissRequest = onDismiss) {
-        Card(
-            modifier = Modifier
-                .padding(16.dp)
-                .fillMaxWidth(),
-            colors = CardDefaults.cardColors(
-                containerColor = MaterialTheme.colorScheme.surface,
-            ),
-            content = {
-                Box(
-                    modifier = Modifier
-                        .heightIn(min = 100.dp)
-                        .fillMaxWidth(),
-                ) {
-                    Text(
-                        modifier = Modifier.align(alignment = Alignment.Center),
-                        text = "Stub settings",
-                    )
-                }
-            },
-        )
     }
 }
 

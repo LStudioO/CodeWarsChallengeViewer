@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="completed_challenges_title">Completed challenges</string>
-    <string name="completed_challenges_toolbar_settings_description">Settings</string>
     <string name="completed_challenges_toolbar_content_description">Toolbar</string>
     <string name="completed_challenges_card_finished_date">Completed at: %s</string>
     <string name="completed_challenges_card_description">Completed challenge</string>
