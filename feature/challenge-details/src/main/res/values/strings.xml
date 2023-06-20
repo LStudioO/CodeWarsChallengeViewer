@@ -12,7 +12,7 @@
     <string name="challenge_details_stats_title">Statistics</string>
     <string name="challenge_details_loading_error">There was an issue when loading the details. Please try again</string>
     <string name="challenge_details_not_found_error">The challenge doesn\'t exist, try to open another</string>
-    <string name="challenge_details_action_by_date">on %s</string>
+    <string name="challenge_details_action_by_date">at %s</string>
     <string name="challenge_details_category_content_description">Category</string>
     <string name="challenge_details_created_by_content_description">Created by</string>
     <string name="challenge_details_approved_by_content_description">Approved by</string>

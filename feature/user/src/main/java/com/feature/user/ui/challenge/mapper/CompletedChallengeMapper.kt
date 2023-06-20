@@ -10,10 +10,7 @@ import java.time.format.DateTimeFormatter
 import java.time.format.FormatStyle
 
 internal class CompletedChallengeMapper {
-    private val dateFormatter = DateTimeFormatter.ofLocalizedDateTime(
-        FormatStyle.MEDIUM,
-        FormatStyle.MEDIUM,
-    )
+    private val dateFormatter = DateTimeFormatter.ofLocalizedDateTime(FormatStyle.SHORT)
 
     fun toUi(from: CompletedChallenge): CompletedChallengeUiModel {
         val localDateTime = from.completedAt.toLocalDateTime(

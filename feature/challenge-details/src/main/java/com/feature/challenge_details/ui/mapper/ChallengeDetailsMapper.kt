@@ -16,10 +16,7 @@ import java.time.format.DateTimeFormatter
 import java.time.format.FormatStyle
 
 internal class ChallengeDetailsMapper {
-    private val dateFormatter = DateTimeFormatter.ofLocalizedDateTime(
-        FormatStyle.SHORT,
-        FormatStyle.SHORT,
-    )
+    private val dateFormatter = DateTimeFormatter.ofLocalizedDateTime(FormatStyle.SHORT)
 
     fun toUi(from: ChallengeDetails): ChallengeDetailsUiModel {
         return ChallengeDetailsUiModel(
