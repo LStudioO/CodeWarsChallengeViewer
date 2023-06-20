@@ -36,6 +36,11 @@ fun NavGraphBuilder.challengeDetailsScreen(
             navArgument(CHALLENGE_ID) { type = NavType.StringType },
             navArgument(CHALLENGE_NAME) { type = NavType.StringType },
         ),
+        deepLinks = listOf(
+            navDeepLink {
+                uriPattern = "https://vstorchevyi-cw.com/{$CHALLENGE_ID}/{$CHALLENGE_NAME}"
+            },
+        ),
         route = challengeDetailsRoute,
     ) {
         ChallengeDetailsRoute(
