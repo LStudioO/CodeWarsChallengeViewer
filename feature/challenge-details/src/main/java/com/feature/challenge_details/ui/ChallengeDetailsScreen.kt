@@ -179,19 +179,6 @@ internal fun ChallengeDetailsScreen(
                 }
             }
         }
-        when (state.error) {
-            ChallengeDetailsError.NetworkError -> {
-                TryAgainSection(
-                    onRetryClick = onRetryClick,
-                )
-            }
-
-            ChallengeDetailsError.NotFound -> {
-                NotFoundErrorMessage()
-            }
-
-            ChallengeDetailsError.None -> {}
-        }
 
         if (state.isLoading) {
             Box(
@@ -208,6 +195,20 @@ internal fun ChallengeDetailsScreen(
                             contentDescription = description
                         },
                 )
+            }
+        } else {
+            when (state.error) {
+                ChallengeDetailsError.NetworkError -> {
+                    TryAgainSection(
+                        onRetryClick = onRetryClick,
+                    )
+                }
+
+                ChallengeDetailsError.NotFound -> {
+                    NotFoundErrorMessage()
+                }
+
+                ChallengeDetailsError.None -> {}
             }
         }
     }

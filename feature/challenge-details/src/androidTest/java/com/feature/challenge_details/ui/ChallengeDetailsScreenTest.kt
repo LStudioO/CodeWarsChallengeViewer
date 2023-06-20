@@ -368,6 +368,30 @@ internal class ChallengeDetailsScreenTest {
     }
 
     @Test
+    fun error_whileLoadingOccurs_isNotDisplayed() {
+        // Arrange
+        val state = createScreenUiModel(
+            error = ChallengeDetailsError.NetworkError,
+            isLoading = true,
+        )
+
+        // Act
+        composeTestRule.setContent {
+            ChallengeDetailsScreen(
+                state = state,
+            )
+        }
+
+        // Assert
+        composeTestRule
+            .onNodeWithText(
+                composeTestRule.activity.getString(
+                    R.string.challenge_details_loading_error,
+                ),
+            ).assertDoesNotExist()
+    }
+
+    @Test
     fun retry_whenShown_isClickable() {
         // Arrange
         val state = createScreenUiModel(
