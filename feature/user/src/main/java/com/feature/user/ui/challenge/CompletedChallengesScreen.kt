@@ -274,7 +274,7 @@ private fun TryAgainSection(
             Spacer(modifier = Modifier.size(4.dp))
             OutlinedButton(onClick = { lazyPagingItems.refresh() }) {
                 Text(
-                    text = stringResource(id = R.string.completed_challenges_loading_retry),
+                    text = stringResource(id = com.core.ui.R.string.retry_button),
                     style = MaterialTheme.typography.labelLarge,
                 )
             }

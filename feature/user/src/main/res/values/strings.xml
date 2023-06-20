@@ -7,7 +7,6 @@
     <string name="completed_challenges_card_description">Completed challenge</string>
     <string name="completed_challenges_card_number_placeholder">#%s</string>
     <string name="completed_challenges_loading_error">There was an issue when refreshing your challenges. Please try again.</string>
-    <string name="completed_challenges_loading_retry">Retry</string>
     <string name="completed_challenges_page_loading_error">There was an issue when loading a page. Please try again.</string>
-    <string name="completed_challenges_page_loading_retry">Retry</string>
+    <string name="completed_challenges_page_loading_retry">Reload the page</string>
 </resources>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="challenge_details_toolbar_content_description">Toolbar</string>
+    <string name="challenge_details_languages_title">Languages</string>
+    <string name="challenge_details_statistic_total_attempts">Total attempts</string>
+    <string name="challenge_details_statistic_total_stars">Total start</string>
+    <string name="challenge_details_statistic_total_completed">Total completed</string>
+    <string name="challenge_details_statistic_vote_score">Vote score</string>
+    <string name="challenge_details_statistic_unresolved_issues">Unresolved issues</string>
+    <string name="challenge_details_statistic_unresolved_suggestions">Unresolved suggestions</string>
+    <string name="challenge_details_statistic_success_rate">Success rate</string>
+    <string name="challenge_details_stats_title">Statistics</string>
+    <string name="challenge_details_loading_error">There was an issue when loading the details. Please try again</string>
+    <string name="challenge_details_not_found_error">The challenge doesn\'t exist, try to open another</string>
+    <string name="challenge_details_action_by_date">on %s</string>
+    <string name="challenge_details_category_content_description">Category</string>
+    <string name="challenge_details_created_by_content_description">Created by</string>
+    <string name="challenge_details_approved_by_content_description">Approved by</string>
+</resources>

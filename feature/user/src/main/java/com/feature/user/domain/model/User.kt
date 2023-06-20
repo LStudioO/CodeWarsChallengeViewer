@@ -1,5 +1,5 @@
 package com.feature.user.domain.model
 
-internal data class User(
+data class User(
     val id: String,
 )

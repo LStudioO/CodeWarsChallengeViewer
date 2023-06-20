@@ -1,3 +1,4 @@
 <resources>
     <string name="back_button_description">Back button</string>
+    <string name="retry_button">Retry</string>
 </resources>

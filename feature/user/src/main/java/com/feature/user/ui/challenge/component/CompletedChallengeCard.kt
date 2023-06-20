@@ -12,6 +12,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.tooling.preview.PreviewParameter
 import androidx.compose.ui.unit.dp
+import com.core.ui.component.Language
 import com.core.ui.preview.ThemePreviews
 import com.core.ui.theme.CwTheme
 import com.feature.user.R
@@ -89,19 +90,8 @@ fun CompletedChallengeCard(
                 ) {
                     languages.forEach { language ->
                         key("language_$language") {
-                            AssistChip(
-                                colors = AssistChipDefaults.assistChipColors(
-                                    containerColor = MaterialTheme.colorScheme.tertiaryContainer,
-                                    labelColor = MaterialTheme.colorScheme.onTertiaryContainer,
-                                ),
-                                onClick = {},
-                                label = {
-                                    Text(
-                                        text = language,
-                                        style = MaterialTheme.typography.bodySmall,
-                                        color = MaterialTheme.colorScheme.onSurface,
-                                    )
-                                },
+                            Language(
+                                language = language,
                             )
                         }
                     }
