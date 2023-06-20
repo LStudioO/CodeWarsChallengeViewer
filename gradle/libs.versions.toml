@@ -9,30 +9,28 @@ sdk-compile = "33"
 # Plugins
 android-gradle = "8.0.2"
 kotlin = "1.8.21"
-kotlin-coroutines = "1.6.4"
+kotlin-coroutines = "1.7.0"
 ksp = "1.8.21-1.0.11"
 detekt = "1.22.0"
 
 # Libs
-android-core-ktx = "1.9.0"
-activity = "1.6.1"
+android-core-ktx = "1.10.1"
+activity = "1.7.2"
 navigation = "2.7.0-beta01"
-lifecycle = "2.6.0"
-compose-bom = "2023.05.01"
+lifecycle = "2.6.1"
+compose-bom = "2023.06.00"
 compose-compiler = "1.4.7"
 coil = "2.4.0"
 material3 = "1.1.0"
 koin = "3.4.1"
 koin-compose = "3.4.5"
 koin-test = "3.4.1"
-data-store = "1.0.0"
 retrofit = "2.9.0"
 moshi = "1.14.0"
 kotlinx-datetime = "0.4.0"
 kotlinx-immutable = "0.3.5"
 timber = "5.0.1"
 paging = "3.2.0-beta01"
-turbine = "0.13.0"
 accompanist = "0.31.3-beta"
 okhttp = "4.11.0"
 rich-text = "0.16.0"
@@ -43,14 +41,14 @@ test-junit = "4.13.2"
 test-mockk = "1.13.5"
 
 # android test libraries
-test-android-runner = "1.5.1"
+test-android-runner = "1.5.2"
 test-android-junit = "1.1.5"
 test-arch-core = "2.2.0"
 espresso-core = "3.5.1"
 uiautomator = "2.2.0"
-benchmark-macro-junit4 = "1.2.0-alpha13"
+benchmark-macro-junit4 = "1.2.0-alpha15"
 androidx-baselineprofile = "1.2.0-alpha13"
-profileinstaller = "1.3.0"
+profileinstaller = "1.3.1"
 
 [plugins]
 
@@ -73,7 +71,6 @@ navigation = { group = "androidx.navigation", name = "navigation-compose", versi
 coil = { group = "io.coil-kt", name = "coil-compose", version.ref = "coil" }
 coroutines-core = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "kotlin-coroutines" }
 coroutines-android = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-android", version.ref = "kotlin-coroutines" }
-data-store = { group = "androidx.datastore", name = "datastore-preferences", version.ref = "data-store" }
 retrofit-core = { module = "com.squareup.retrofit2:retrofit", version.ref = "retrofit" }
 retrofit-converter-moshi = { module = "com.squareup.retrofit2:converter-moshi", version.ref = "retrofit" }
 kotlinx-datetime = { module = "org.jetbrains.kotlinx:kotlinx-datetime", version.ref = "kotlinx-datetime" }
@@ -87,12 +84,10 @@ moshi-core = { module = "com.squareup.moshi:moshi", version.ref = "moshi" }
 moshi-codegen = { module = "com.squareup.moshi:moshi-kotlin-codegen", version.ref = "moshi" }
 
 # Koin
-koin-core = { module = "io.insert-koin:koin-core", version.ref = "koin" }
 koin-android = { module = "io.insert-koin:koin-android", version.ref = "koin" }
 koin-compose = { module = "io.insert-koin:koin-androidx-compose", version.ref = "koin-compose" }
 koin-compose-navigation = { module = "io.insert-koin:koin-androidx-compose-navigation", version.ref = "koin-compose" }
 koin-android-test = { module = "io.insert-koin:koin-android-test", version.ref = "koin" }
-koin-junit4-test = { module = "io.insert-koin:koin-test-junit4", version.ref = "koin-test" }
 koin-test = { module = "io.insert-koin:koin-test", version.ref = "koin-test" }
 
 # Compose
@@ -125,7 +120,6 @@ test-junit = { module = "junit:junit", version.ref = "test-junit" }
 test-kotlin = { module = "org.jetbrains.kotlin:kotlin-test", version.ref = "kotlin" }
 test-kotlin-coroutines = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-test", version.ref = "kotlin-coroutines" }
 test-mockk = { module = "io.mockk:mockk", version.ref = "test-mockk" }
-test-turbine = { module = "app.cash.turbine:turbine", version.ref = "turbine" }
 
 # Android test libraries
 test-android-runner = { module = "androidx.test:runner", version.ref = "test-android-runner" }
@@ -185,7 +179,6 @@ test-common = [
     "test-kotlin",
     "test-kotlin-coroutines",
     "test-mockk",
-    "test-turbine",
 ]
 
 test-android = [
