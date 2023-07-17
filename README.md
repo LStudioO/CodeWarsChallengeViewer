@@ -10,9 +10,9 @@
 
 ## Screenshots
 
-<img src="https://github.com/LStudioO/CodeWarsChallengeViewer/assets/20700372/1f4fcda2-4947-472d-bd72-ca01537cc711" width="270" height="570">
-<img src="https://github.com/LStudioO/CodeWarsChallengeViewer/assets/20700372/17bdcadf-dd6b-4423-90ab-aebb7cb35dbb" width="270" height="570">
-<img src="https://github.com/LStudioO/CodeWarsChallengeViewer/assets/20700372/346d6fb0-d9e4-4252-a337-be1b04ee8f32" width="270" height="570">
+<img src="https://github.com/LStudioO/CodeWarsChallengeViewer/assets/20700372/39876ff1-42d4-4358-93df-b84ca1121758" width="270" height="570">
+<img src="https://github.com/LStudioO/CodeWarsChallengeViewer/assets/20700372/515c53cc-1e63-485c-9855-75a70940da04" width="270" height="570">
+<img src="https://github.com/LStudioO/CodeWarsChallengeViewer/assets/20700372/d24a5ba5-b8c8-42ca-9b28-91217b87be0e" width="270" height="570">
 
 ## Installation
 
@@ -86,7 +86,7 @@ Then copy the resulting baseline profile from the emulator to [`app/src/main/bas
 
 ## Demo
 
-https://github.com/LStudioO/CodeWarsChallengeViewer/assets/20700372/2813d718-e183-4b32-b60a-47894c99c6de
+https://github.com/LStudioO/CodeWarsChallengeViewer/assets/20700372/75f275cb-8d4e-4ec7-b9e8-6b1390e20201
 
 # License
 
