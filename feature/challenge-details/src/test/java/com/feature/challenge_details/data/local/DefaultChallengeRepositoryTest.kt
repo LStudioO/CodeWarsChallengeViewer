@@ -2,7 +2,6 @@ package com.feature.challenge_details.data.local
 
 import com.core.utils.NotFoundError
 import com.core.utils.functional.Either
-import com.core.utils.functional.leftValue
 import com.core.utils.logger.AppLogger
 import com.core.utils.platform.network.HttpError
 import com.feature.challenge_details.data.remote.api.ChallengeApi
@@ -22,7 +21,7 @@ internal class DefaultChallengeRepositoryTest {
         val expectedChallenge = createChallengeDetails(id = "1")
         val sut = createSut(
             api = mockk {
-                coEvery { getDetails(id = "1") } returns Either.right(
+                coEvery { getDetails(id = "1") } returns Either.Right(
                     createChallengeDetailsDto(id = "1"),
                 )
             },
@@ -40,7 +39,7 @@ internal class DefaultChallengeRepositoryTest {
         // Arrange
         val sut = createSut(
             api = mockk {
-                coEvery { getDetails(id = "1") } returns Either.left(
+                coEvery { getDetails(id = "1") } returns Either.Left(
                     HttpError(body = "", code = 404),
                 )
             },
@@ -50,7 +49,7 @@ internal class DefaultChallengeRepositoryTest {
         val result = sut.getDetails("1")
 
         // Assert
-        assertSame(NotFoundError, result.leftValue())
+        assertSame(NotFoundError, result.leftOrNull())
     }
 
     private fun createSut(

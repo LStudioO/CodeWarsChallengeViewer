@@ -1,7 +1,6 @@
 package com.core.utils.platform
 
 import com.core.utils.functional.Either
-import com.core.utils.functional.leftValue
 import com.core.utils.platform.network.ApiError
 import com.core.utils.platform.network.EitherCall
 import com.core.utils.platform.network.NetworkError
@@ -86,7 +85,7 @@ class EitherCallTest {
         verify { callback.onResponse(any(), capture(eitherResponse)) }
         assertTrue(eitherResponse.captured.isSuccessful)
         assertTrue(eitherResponse.captured.body()?.isLeft() ?: false)
-        assertTrue(eitherResponse.captured.body()?.leftValue() is NetworkError)
+        assertTrue(eitherResponse.captured.body()?.leftOrNull() is NetworkError)
     }
 
     @Test
@@ -110,7 +109,7 @@ class EitherCallTest {
         verify { callback.onResponse(any(), capture(eitherResponse)) }
         assertTrue(eitherResponse.captured.isSuccessful)
         assertTrue(eitherResponse.captured.body()?.isLeft() ?: false)
-        assertTrue(eitherResponse.captured.body()?.leftValue() is UnknownApiError)
+        assertTrue(eitherResponse.captured.body()?.leftOrNull() is UnknownApiError)
     }
 
     @Test

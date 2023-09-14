@@ -28,11 +28,11 @@ internal class FakeUserApi : UserApi {
         username: String,
         page: Int,
     ): Either<ApiError, CompletedChallengesDto> {
-        val list = model[username] ?: return Either.left(UnknownApiError(Exception()))
+        val list = model[username] ?: return Either.Left(UnknownApiError(Exception()))
         val startIndex = page * API_PAGE_COUNT
         val endIndex = minOf(list.size, startIndex + API_PAGE_COUNT)
         val data = if (startIndex > endIndex) emptyList() else list.subList(startIndex, endIndex)
-        return Either.right(
+        return Either.Right(
             CompletedChallengesDto(
                 data = data,
                 totalItems = list.size,

@@ -221,7 +221,7 @@ class CompletedChallengesPagingSourceTest {
         every { params.key } returns page
 
         val exception = Exception("Test exception")
-        coEvery { userApi.getCompletedChallenges(TEST_USER, page) } returns Either.left(
+        coEvery { userApi.getCompletedChallenges(TEST_USER, page) } returns Either.Left(
             NetworkError(exception),
         )
 

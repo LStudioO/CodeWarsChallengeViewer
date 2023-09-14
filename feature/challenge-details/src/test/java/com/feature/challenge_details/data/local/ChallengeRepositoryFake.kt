@@ -6,7 +6,7 @@ import com.feature.challenge_details.domain.model.ChallengeDetails
 import com.feature.challenge_details.domain.repository.ChallengeRepository
 
 internal class ChallengeRepositoryFake : ChallengeRepository {
-    private var detailsResponse: Either<AppError, ChallengeDetails> = Either.left(AppError())
+    private var detailsResponse: Either<AppError, ChallengeDetails> = Either.Left(AppError())
 
     fun setDetailsResponse(response: Either<AppError, ChallengeDetails>) {
         detailsResponse = response

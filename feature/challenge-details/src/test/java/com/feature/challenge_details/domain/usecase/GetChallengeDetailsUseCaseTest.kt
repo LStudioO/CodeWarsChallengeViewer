@@ -17,7 +17,7 @@ internal class GetChallengeDetailsUseCaseTest {
             id = "1",
         )
         val repository: ChallengeRepository = mockk {
-            coEvery { getDetails(id = "1") } returns Either.right(challenge)
+            coEvery { getDetails(id = "1") } returns Either.Right(challenge)
         }
         val sut = createSut(repository)
 

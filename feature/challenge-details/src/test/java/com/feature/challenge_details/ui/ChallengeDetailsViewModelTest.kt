@@ -56,7 +56,7 @@ class ChallengeDetailsViewModelTest {
             getChallengeDetails = GetChallengeDetailsUseCase(
                 repository = ChallengeRepositoryFake().apply {
                     setDetailsResponse(
-                        Either.right(
+                        Either.Right(
                             createChallengeDetails(),
                         ),
                     )
@@ -96,7 +96,7 @@ class ChallengeDetailsViewModelTest {
         val sut = createSut(
             getChallengeDetails = GetChallengeDetailsUseCase(
                 repository = ChallengeRepositoryFake().apply {
-                    setDetailsResponse(Either.left(AppError()))
+                    setDetailsResponse(Either.Left(AppError()))
                 },
             ),
         )
@@ -117,7 +117,7 @@ class ChallengeDetailsViewModelTest {
         val sut = createSut(
             getChallengeDetails = GetChallengeDetailsUseCase(
                 repository = ChallengeRepositoryFake().apply {
-                    setDetailsResponse(Either.left(NotFoundError))
+                    setDetailsResponse(Either.Left(NotFoundError))
                 },
             ),
         )
@@ -133,7 +133,7 @@ class ChallengeDetailsViewModelTest {
     fun `successfully retry`() = runTest {
         // Arrange
         val repository = ChallengeRepositoryFake().apply {
-            setDetailsResponse(Either.left(AppError()))
+            setDetailsResponse(Either.Left(AppError()))
         }
         val sut = createSut(
             getChallengeDetails = GetChallengeDetailsUseCase(
@@ -144,7 +144,7 @@ class ChallengeDetailsViewModelTest {
         runCurrent()
         // Set the success response for the retry attempt
         repository.setDetailsResponse(
-            Either.right(
+            Either.Right(
                 createChallengeDetails(),
             ),
         )
@@ -163,7 +163,7 @@ class ChallengeDetailsViewModelTest {
         val sut = createSut(
             getChallengeDetails = GetChallengeDetailsUseCase(
                 repository = ChallengeRepositoryFake().apply {
-                    setDetailsResponse(Either.left(AppError()))
+                    setDetailsResponse(Either.Left(AppError()))
                 },
             ),
         )
@@ -183,7 +183,7 @@ class ChallengeDetailsViewModelTest {
         val sut = createSut(
             getChallengeDetails = GetChallengeDetailsUseCase(
                 repository = ChallengeRepositoryFake().apply {
-                    setDetailsResponse(Either.left(AppError()))
+                    setDetailsResponse(Either.Left(AppError()))
                 },
             ),
         )
@@ -204,7 +204,7 @@ class ChallengeDetailsViewModelTest {
         val sut = createSut(
             getChallengeDetails = GetChallengeDetailsUseCase(
                 repository = ChallengeRepositoryFake().apply {
-                    setDetailsResponse(Either.left(NotFoundError))
+                    setDetailsResponse(Either.Left(NotFoundError))
                 },
             ),
         )
